@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.urls import path
 
-from chores.views import home
+from chores.views import member_list
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', member_list, name='member_list'),
 ]
