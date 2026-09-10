@@ -7,6 +7,7 @@
 <body>
     <main>
         <h1>Household members</h1>
+        <p><a href="{% url 'active_chore_list' %}">View active chores</a></p>
 
         <form method="post">
             {% csrf_token %}
@@ -24,6 +25,8 @@
                 <li>No household members yet.</li>
             {% endfor %}
         </ul>
+
+        <p><a href="{% url 'chore_create' %}">Add a chore</a></p>
     </main>
 </body>
 </html>

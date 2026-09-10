@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.urls import path
 
-from chores.views import member_list
+from chores.views import active_chore_list, chore_create, member_list
 
 urlpatterns = [
     path('', member_list, name='member_list'),
+    path('chores/', active_chore_list, name='active_chore_list'),
+    path('chores/add/', chore_create, name='chore_create'),
 ]

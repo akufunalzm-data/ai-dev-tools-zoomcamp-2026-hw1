@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Active chores</title>
+</head>
+<body>
+    <main>
+        <h1>Active chores</h1>
+        <p><a href="{% url 'member_list' %}">Manage household members</a></p>
+        <p><a href="{% url 'chore_create' %}">Add a chore</a></p>
+
+        <ul>
+            {% for chore in chores %}
+                <li>
+                    {{ chore.title }} — {{ chore.assignee.name }} — {{ chore.due_date }}
+                </li>
+            {% empty %}
+                <li>No active chores yet.</li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
